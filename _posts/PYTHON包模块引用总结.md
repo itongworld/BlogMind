@@ -19,7 +19,7 @@ tags:
 
 ### 1. sys.path.append
 在需要引用的文件中添加以下代码：
-```PYTHON
+``` PYTHON
 import sys
 sys.path.append(r'C:\Users\OUYANG\Desktop\te\mmm')
 
@@ -44,7 +44,7 @@ sys.path.append(r'mmm')
 使用`import`语句引用的包或模块名不能含有空格，但是如果不方便更改包或模块名，可以使用python内置`__import__`函数，其实`import`语句就是通过`__import__`内置函数实现的。
 
 例如以下代码：
-```PYTHON
+``` PYTHON
 m168 = __import__('[168]Excel Sheet Column Title')
 print dir(m168)
 s168=m168.Solution()

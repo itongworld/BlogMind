@@ -58,7 +58,7 @@ Markdown元素测试文件。
 
 # *引用*
 > 这是一级引用
->> 这是二级引用
+> > 这是二级引用
 
 > Every interaction is both precious and an opportunity to delight.
 
@@ -76,7 +76,7 @@ ___
 # *代码*
 代码块
 
-```python
+``` PYTHON
 import __ouyang__
 import __future__
 def dfs(roo):
@@ -115,7 +115,6 @@ def dfs(root):
 		print root.val
 		dfs(root.left)
 		dfs(root.right)
-
 ```
 代码行
 
@@ -139,8 +138,8 @@ def dfs(root):
 
 无序列表
 * one thing
-	* if I have seen a little further
-	* it is by standing on the shoulder of giants
+  * if I have seen a little further
+  * it is by standing on the shoulder of giants
 * another thing
 * last thing
 
@@ -160,11 +159,11 @@ def dfs(root):
 
 # *表格*
 
-|姓名|性别|学校|
-|:---|:---|:---|
-|欧阳Tong|男|北京理工大学|
-|欧阳|男|北京理工大学|
-|欧阳童|男|北京理工大学|
+| 姓名     | 性别   | 学校     |
+| :----- | :--- | :----- |
+| 欧阳Tong | 男    | 北京理工大学 |
+| 欧阳     | 男    | 北京理工大学 |
+| 欧阳童    | 男    | 北京理工大学 |
 
 <br/>
 

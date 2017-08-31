@@ -11,7 +11,7 @@ tags:
 Python中的函数不但可以返回`int`、`str`、`list`、`dict`等数据类型，还可以返回函数。
 
 例如，定义一个返回函数`g`的函数`f`，代码如下：
-```PYTHON
+``` PYTHON
 def f():
 	print 'call f()...'
 	#define g
@@ -24,7 +24,7 @@ def f():
 <!-- more -->
 
 调用函数`f`，则会得到`f`返回的那个函数：
-```PYTHON
+``` PYTHON
 >>> x=f()
 call f()...
 >>> x
@@ -33,7 +33,7 @@ call f()...
 call g()...
 ```
 请注意区分返回函数和返回值：
-```PYTHON
+``` PYTHON
 def myabs():
 	return abs
 
@@ -42,24 +42,24 @@ def myabs2(x):
 ```
 
 返回函数可以将一些计算延迟执行。例如，定义一个普通的求和函数：
-```PYTHON
+``` PYTHON
 def calc_sum(lst):
 	return sum(lst)
 ```
 调用`calc_sum()`函数时，将立刻计算并得到结果：
-```PYTHON
+``` PYTHON
 >>> calc_sum([1, 2, 3, 4])
 10
 ```
 但是，如果返回一个函数，就可以延迟计算：
-```PYTHON
+``` PYTHON
 def calc_sum(lst):
 	def lazy_sum():
 		return sum(lst)
 	return lazy_sum
 ```
 调用`calc_sum()`函数并没有计算出结果，对返回的函数进行调用时才得到结果：
-```PYTHON
+``` PYTHON
 >>> f=calc_sum([1, 2, 3, 4])
 >>> f
 <function g at 0x0000000002CC20B8>
@@ -70,7 +70,7 @@ def calc_sum(lst):
 
 ### 示例1
 请编写一个函数`calc_prod(lst)`，参数为`list`，返回值为计算参数元素乘积的函数。
-```PYTHON
+``` PYTHON
 def calc_prod(lst):
 	def lazy_prod():
 		def f(x, y):
@@ -79,7 +79,7 @@ def calc_prod(lst):
 	return lazy_load
 ```
 测试：
-```PYTHON
+``` PYTHON
 >>> f=calc_prod([1, 2, 3, 4])
 >>> print f()
 24
@@ -87,7 +87,7 @@ def calc_prod(lst):
 
 ## 闭包
 在函数内部定义的函数和外部定义的函数是一样的，只是它们无法被外部访问。例如：
-```PYTHON
+``` PYTHON
 def g():
 	print 'g()...'
 
@@ -96,7 +96,7 @@ def f():
 	return g
 ```
 而将`g`的定义移入函数f内部，可以防止其他代码调用`g`：
-```PYTHON
+``` PYTHON
 def f():
 	print 'f()...'
 	def g():
@@ -108,7 +108,7 @@ def f():
 
 像这种，内层函数引用外层函数（定义内层函数的环境中的）局部变量，然后返回内层函数的情况，称为闭包（Closure）。
 闭包的特点是，返回函数引用了外层函数的局部变量。** 所以，要正确使用闭包，需要确保引用的局部变量在返回函数后不能改变。**例如，希望一次返回三个函数分别计算`1*1`，`2*2`，`3*3`：
-```PYTHON
+``` PYTHON
 def count():
 	fs=[]
 	for i in range(1, 4):
@@ -118,7 +118,7 @@ def count():
 	return fs
 ```
 然而调用结果：
-```PYTHON
+``` PYTHON
 >>> f1, f2, f3=count()
 >>>f1()
 9
@@ -134,14 +134,14 @@ def count():
 改写`count()`函数，使其返回能正确计算`1*1`，`2*2`，`3*3`的函数。
 
 考察下面的函数：
-```PYTHON
+``` PYTHON
 def f(j):
 	def g():
 		return j*j
 	return g
 ```
 它可以正确地返回一个函数`g`，`g`所引用的变量`j`不是循环变量，因此将正常执行。在`count()`函数循环内部，如果借助`f`函数，就可以避免引用循环变量`i`。
-```PYTHON
+``` PYTHON
 def count():
 	fs=[]
 	for i in range(1, 4):
@@ -154,7 +154,7 @@ def count():
 	return fs
 ```
 调用返回函数：
-```PYTHON
+``` PYTHON
 >>> f1, f2, f3=count()
 >>> print f1(), f2(), f3
 1, 4, 9
