@@ -4,8 +4,8 @@ date: 2017-08-29 17:00:00
 tags:
 - MARKDOWN
 - 测试
-cover_index: /assets/1.jpg
-cover_detail: /assets/Vayne.jpg
+cover_index: /assets/coverindex.jpg
+cover_detail: /assets/coverdetail.jpg
 photos:
 - /assets/1.jpg
 - /assets/2.jpg
