@@ -1,9 +1,11 @@
 ---
-title: elements
+title: ELEMENTS
 date: 2017-08-29 17:00:00
-tags: 测试
+tags:
+- MARKDOWN
+- 测试
 cover_index: /assets/1.jpg
-cover_detail: /assets/2.jpg
+cover_detail: /assets/Vayne.jpg
 photos:
 - /assets/1.jpg
 - /assets/2.jpg
@@ -16,10 +18,7 @@ photos:
 - /assets/11.jpg
 ---
 
-
-
-Markdown element test file。
-Markdown元素测试文件。
+Markdown element test file。       Markdown元素测试文件。
 
 
 
@@ -28,8 +27,11 @@ Markdown元素测试文件。
 
 
 
+如果将more注释放在文档开头，则摘要显示为全文（因为文档开头的注释会被忽略）。若有多个more注释，则只有第一个生效。
 
-九宫格beta
+
+
+
 ![Want me?](/assets/6.jpg)![Want me?](/assets/4.jpg)![Want me?](/assets/5.jpg)
 ![Want me?](/assets/1.jpg)![Want me?](/assets/2.jpg)![Want me?](/assets/3.jpg)
 ![Want me?](/assets/22.jpg)![Want me?](/assets/11.jpg)![Want me?](/assets/23.jpg)
@@ -56,7 +58,9 @@ Markdown元素测试文件。
 ---
 
 
+
 # *引用*
+
 > 这是一级引用
 > > 这是二级引用
 
@@ -70,7 +74,9 @@ Every interaction is both precious and an opportunity to delight.
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 
-___
+---
+
+
 
 
 # *代码*
@@ -123,38 +129,50 @@ def dfs(root):
 ---
 
 
+
 # *图片和链接*
+
 ![Want me?](/assets/4.jpg)
+
+
+
 [北京理工大学][BIT]
 
 ***
 
 
+
 # *列表*
+
 有序列表
 1. first
 2. second
 3. third
 
 无序列表
+
 * one thing
   * if I have seen a little further
   * it is by standing on the shoulder of giants
 * another thing
 * last thing
 
-***粗体斜体***
-** *粗体斜体2* **
 ** 粗体 **
 *斜体*
 
+***粗体斜体***
+** *粗体斜体2* **
+
 ---
+
 
 
 # *删除线*
+
 ~~这是一条删除线~~
 
 ---
+
 
 
 # *表格*
@@ -168,6 +186,7 @@ def dfs(root):
 <br/>
 
 ---
+
 
 
 # *数学公式*
@@ -210,52 +229,13 @@ $$
 
 $$f(x,y,z) = 3y^2z \left( 3 + \frac{7x+5}{1 + y^2} \right).$$
 
-
-
-\begin{align}
-\cos2\theta &= \cos^2\theta - \sin^2\theta \\\
-&= 2\cos^2\theta-1
-\end{align}
-
-
-The \\emph{characteristic polynomial} \\(\chi(\lambda)\\) of the
-\\(3 \times 3\\) matrix
-$$
-\left( \begin{array}{ccc}
-a & b & c \\\ 
-d & e & f \\\
-g & h & i \end{array}\right)
-$$
-is given by the formula
-$$
-\chi(\lambda) = \left| \begin{array}{ccc}
-\lambda - a & -b & -c \\\
--d & \lambda - e & -f \\\
--g & -h & \lambda - i \end{array} \right|.
-$$
-
-$$
-\begin{array}{c|lcr}
-n & \text{Left} & \text{Center} & \text{Right} \\\
-\hline
-1 & 0.24 & 1 & 125 \\\
-2 & -1 & 189 & -8 \\\
-3 & -20 & 2000 & 1+10i \\\
-\end{array}
-$$
-
-
-\begin{align}
-\sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\\
- & = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\\
- & = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\\
- & = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\\ 
- & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
-\end{align}
-
-
-
 Details to see: [MathJax](http://docs.mathjax.org/en/latest/tex.html)
+
+
+
+
+
+
 
 
 [BIT]: http://www.bit.edu.cn
