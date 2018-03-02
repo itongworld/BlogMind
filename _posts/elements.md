@@ -31,7 +31,6 @@ Markdown element test file。       Markdown元素测试文件。
 
 
 
-
 ![Want me?](/assets/6.jpg)![Want me?](/assets/4.jpg)![Want me?](/assets/5.jpg)
 ![Want me?](/assets/1.jpg)![Want me?](/assets/2.jpg)![Want me?](/assets/3.jpg)
 ![Want me?](/assets/22.jpg)![Want me?](/assets/11.jpg)![Want me?](/assets/23.jpg)
@@ -78,51 +77,59 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 
 
 
-
 # *代码*
-代码块
+
+## 代码块
 
 ``` PYTHON
-import __ouyang__
-import __future__
-def dfs(roo):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
+# -*- coding:utf-8 -*-
+class Solution:
+    def Fibonacci_n(self, n):
+        #Time Complexity:  O(n)
+        #Space Complexity: O(1)
+        
+        first=1
+        second=1
+        if n<=0: return 0
+        
+        while n>2:
+            third=first+second
+            first=second
+            second=third
+            n-=1
+        return second
+    
+    def Fibonacci(self, n):
+        #Time Complexity:  O(logn)
+        #Space Complexity: O(1)
+        q=[[1,1],[1,0]]
+        
+        if n==0: return 0
+        res=self.mypower(q,n-1)
+        return res[0][0]
+    
+    def mypower(self, a, n):
+        
+        ret=[[1,0],[0,1]]
+        while n>0:
+            if (n&1)==1:
+                ret=self.mymultiply(ret, a)
+            n>>=1
+            a=self.mymultiply(a, a)
+        return ret
+    
+    #Matrix Multiplication
+    def mymultiply(self, a, b):
+        c=[[0 for _ in xrange(2)] for _ in xrange(2)]
+        
+        for i in xrange(2):
+            for j in xrange(2):
+                c[i][j]=(a[i][0]*b[0][j]+a[i][1]*b[1][j])
+        return c
 
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
-def dfs(root):
-	if root:
-		print root.val
-		dfs(root.left)
-		dfs(root.right)
 ```
-代码行
+
+## 代码行
 
 执行`python setup.py install`代码安装python库。
 
@@ -134,8 +141,6 @@ def dfs(root):
 
 ![Want me?](/assets/4.jpg)
 
-
-
 [北京理工大学][BIT]
 
 ***
@@ -144,12 +149,13 @@ def dfs(root):
 
 # *列表*
 
-有序列表
+## 有序列表
+
 1. first
 2. second
 3. third
 
-无序列表
+## 无序列表
 
 * one thing
   * if I have seen a little further
@@ -177,11 +183,11 @@ def dfs(root):
 
 # *表格*
 
-| 姓名     | 性别   | 学校     |
-| :----- | :--- | :----- |
-| 欧阳Tong | 男    | 北京理工大学 |
-| 欧阳     | 男    | 北京理工大学 |
-| 欧阳童    | 男    | 北京理工大学 |
+| 姓名          | 性别   | 学校     |
+| :---------- | :--- | :----- |
+| Ouyang Tong | Male    | Beijing Institute of Technology |
+| 欧阳          | 男    | 北京理工大学 |
+| 欧阳童         | 男    | 北京理工大学 |
 
 <br/>
 
@@ -230,8 +236,6 @@ $$
 $$f(x,y,z) = 3y^2z \left( 3 + \frac{7x+5}{1 + y^2} \right).$$
 
 Details to see: [MathJax](http://docs.mathjax.org/en/latest/tex.html)
-
-
 
 
 

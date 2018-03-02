@@ -12,7 +12,6 @@ cover_detail:
 
 
 
-
 ### No.1
 在系统变量里点击新建，变量名填写`JAVA_HOME`。
 

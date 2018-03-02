@@ -32,10 +32,8 @@ sys.path.append(r'mmm')
 
 
 
-
 ### 2. XXX.pth文件
 在`PythonInstallDirectory\Lib\site-packages`目录下新建`XXX.pth`文件，文件名称可以自定。然后在文件中添加引用包或模块的绝对路径`C:\Users\OUYANG\Desktop\te\mmm\mm`，同样必须是包的路径，否则会报错`ImportError`。
-
 
 
 
@@ -44,11 +42,8 @@ sys.path.append(r'mmm')
 
 
 
-
 ### 4. PYTHONPATH环境变量
 新建系统变量，变量名为`PYTHONPATH`，变量值为引用包或模块的绝对路径，必须是包的路径，否则会报错`ImportError`。
-
-
 
 
 
