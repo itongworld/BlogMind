@@ -4,18 +4,18 @@ date: 2017-08-29 17:00:00
 tags:
 - MARKDOWN
 - 测试
-cover_index: /assets/coverindex.jpg
-cover_detail: /assets/coverdetail.jpg
+cover_index: /assets/elements/coverindex.jpg
+cover_detail: /assets/elements/coverdetail.jpg
 photos:
-- /assets/1.jpg
-- /assets/2.jpg
-- /assets/3.jpg
-- /assets/5.jpg
-- /assets/7.jpg
-- /assets/8.jpg
-- /assets/9.jpg
-- /assets/10.jpg
-- /assets/11.jpg
+- /assets/elements/1.jpg
+- /assets/elements/2.jpg
+- /assets/elements/3.jpg
+- /assets/elements/4.jpg
+- /assets/elements/5.jpg
+- /assets/elements/6.jpg
+- /assets/elements/7.jpg
+- /assets/elements/8.jpg
+- /assets/elements/9.jpg
 ---
 
 Markdown element test file。       Markdown元素测试文件。
@@ -28,12 +28,13 @@ Markdown element test file。       Markdown元素测试文件。
 
 
 如果将more注释放在文档开头，则摘要显示为全文（因为文档开头的注释会被忽略）。若有多个more注释，则只有第一个生效。
+<!-- more -->
 
 
 
-![Want me?](/assets/6.jpg)![Want me?](/assets/4.jpg)![Want me?](/assets/5.jpg)
-![Want me?](/assets/1.jpg)![Want me?](/assets/2.jpg)![Want me?](/assets/3.jpg)
-![Want me?](/assets/22.jpg)![Want me?](/assets/11.jpg)![Want me?](/assets/23.jpg)
+![Want me?-3gg](/assets/elements/10.jpg)![Want me?-3gg](/assets/elements/11.jpg)![Want me?-3gg](/assets/elements/12.jpg)
+![Want me?-3gg](/assets/elements/13.jpg)![Want me?-3gg](/assets/elements/14.jpg)![Want me?-3gg](/assets/elements/15.jpg)
+![Want me?-3gg](/assets/elements/16.jpg)![Want me?-3gg](/assets/elements/17.jpg)![Want me?-3gg](/assets/elements/18.jpg)
 
 <!-- 如果将more注释放在文档开头，则摘要显示为全文（因为文档开头的注释会被忽略）。若有多个more注释，则只有第一个生效。 -->
 <!-- more -->
@@ -65,7 +66,7 @@ Markdown element test file。       Markdown元素测试文件。
 
 > Every interaction is both precious and an opportunity to delight.
 
-{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html  Welcome to Island Marketing %}
+{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
 Every interaction is both precious and an opportunity to delight.
 {% endblockquote %}
 
@@ -109,7 +110,6 @@ class Solution:
         return res[0][0]
     
     def mypower(self, a, n):
-        
         ret=[[1,0],[0,1]]
         while n>0:
             if (n&1)==1:
@@ -131,7 +131,7 @@ class Solution:
 
 ## 代码行
 
-执行`python setup.py install`代码安装python库。
+进入库文件的`setup.py`目录下，执行`python setup.py install`代码即可安装库文件。
 
 ---
 
@@ -139,7 +139,13 @@ class Solution:
 
 # *图片和链接*
 
-![Want me?](/assets/4.jpg)
+在post页面中，图片总共有三种显示格式，分别是单行显示、两张一行显示和三张一行显示，分别对应图片属性`alt`的`-1gg`、`-2gg`、`-3gg`后缀设置，系统会在相应图片标签中添加`gg1`、`gg2`、`gg3`类样式，相应图片的高度为其宽度的自动、一倍、两倍。图片的默认显示格式是单行显示。
+
+不用担心这样会影响图片标题，系统会自动过滤掉这些后缀设置。
+
+![Want me?](/assets/elements/19.jpg)
+![Want me?-2gg](/assets/elements/20.jpg)![Want me?-2gg](/assets/elements/21.jpg)
+![Want me?-3gg](/assets/elements/22.jpg)![Want me?-3gg](/assets/elements/23.jpg)![Want me?-3gg](/assets/elements/24.jpg)
 
 [北京理工大学][BIT]
 
@@ -163,11 +169,19 @@ class Solution:
 * another thing
 * last thing
 
-** 粗体 **
+**粗体**
+
 *斜体*
 
 ***粗体斜体***
-** *粗体斜体2* **
+
+
+
+> 注：以下两个Markdown符号无法生效，原因是为了避免与Latex（[MathJax](https://www.mathjax.org/)插件）中的符号冲突而手动修改了Hexo的Markdown渲染引擎。去掉了`\`符号的转义语义和`_`符号的斜体语义。修改后行内公式`\\(...\\)`和行间公式`\\[...\\]`也同时失效。
+
+_斜体_
+
+F:\\MYBLOG\\node_modules\\marked\\lib\\marked.js
 
 ---
 
@@ -183,11 +197,11 @@ class Solution:
 
 # *表格*
 
-| 姓名          | 性别   | 学校     |
-| :---------- | :--- | :----- |
-| Ouyang Tong | Male    | Beijing Institute of Technology |
-| 欧阳          | 男    | 北京理工大学 |
-| 欧阳童         | 男    | 北京理工大学 |
+| 姓名          | 性别  | 学校                            |
+| :----------  | :--- | :------------------------------ |
+| Ouyang Tong  | Male | Beijing Institute of Technology |
+| 欧阳          | 男   | 北京理工大学                      |
+| 欧阳童        | 男    | 北京理工大学                      |
 
 <br/>
 
@@ -197,12 +211,24 @@ class Solution:
 
 # *数学公式*
 
-When \\(a \ne 0\\), there are two solutions to  \\(ax^2 + bx + c = 0\\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+## 行内公式
 
-$$
+
+
+> 注：在[MathJax](https://www.mathjax.org/)中行内公式有两种写法，分别是`\\(...\\)`和`$...$`，后者默认是禁用的，需要在[MathJax的Javascript配置文件](https://docs.mathjax.org/en/latest/start.html)中手动启用。
+
+When \\(a \ne 0\\), there are two solutions to  \\(ax^2 + bx + c = 0\\) and they are
+\\(x = {-b \pm \sqrt{b^2-4ac} \over 2a}\\).
+
+When $a \ne 0$, there are two solutions to  $ax^2 + bx + c = 0$ and they are
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$.
+
+
+## 行间公式
+
+\\[
 \frac{du}{dt} and \frac{d^2u}{dt^2}
-$$
+\\]
 
 $$
 \frac{\partial u}{\partial t} 
@@ -236,7 +262,6 @@ $$
 $$f(x,y,z) = 3y^2z \left( 3 + \frac{7x+5}{1 + y^2} \right).$$
 
 Details to see: [MathJax](http://docs.mathjax.org/en/latest/tex.html)
-
 
 
 
